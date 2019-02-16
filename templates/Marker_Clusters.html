@@ -1,38 +1,176 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Marker Clusters</title>
 
     <!-- Leaflet JS & CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+      integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+      crossorigin=""
+    ></script>
 
     <!-- d3 JS -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <!-- Marker Cluster JS & CSS -->
-    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css"
+    />
 
     <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
 
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    
   </head>
   <body>
-    <div class="topnav">
+    <!-- <div class="topnav">
       <a class="active" href="/">Refresh</a>
-      <input type="text" placeholder="Search..">
+      <input type="text" placeholder="Search.." />
+    </div> -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" style="margin-left: 50px; color: white; background-color: green; margin-left: 50px;" href="./Marker_Clusters.html">Chicago</a>
+          </div>
+          <!-- <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Plots <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="temp.html">Max Temperature</a></li>
+                  <li><a href="humi.html">Humidity</a></li>
+                  <li><a href="cloud.html">Cloudiness</a></li>
+                  <li><a href="wind.html">Wind Speed</a></li>
+                </ul>
+              </li>
+              <li><a href="comp.html">Comparison</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+            
+          </div> -->
+        </div>
+      </nav>
+      
+      
+    <!-- <header>
+        <h1>Chicago's Parking Availability</h1>
+      </header> -->
+
+    <!-- <form id="search-form">
+        <div class="element">
+          
+              <label for="date">Enter a Start Time</label>
+              <input
+                
+                id="datetime"
+                type="text"
+                placeholder="12:00 pm"
+              />
+        </div>
+        <div class="element">
+              <label for="date">Enter a End Time</label>
+              <input
+                
+                id="datetime"
+                type="text"
+                placeholder="12:00 am"
+              />
+        </div>
+        <div class="element">
+              <label for="date">Enter a Location</label>
+              <input
+                
+                id="datetime"
+                type="text"
+                placeholder="Lincoln Park"
+              />
+        </div>   
+        
+        <button id="filter-btn" type="submit">
+          Search
+        </button>
+      </form id="search-form"> -->
+    
+  
+  
+
+  </div>
+</div>
+    <div id="content" style="margin: 5px">
+      <div id="intro" class="sidebar">
+        <article>
+          <h2>Welcome to Chicago's Parking App</h2>
+          <p>
+            Chicago's Parking App allows you to enter a start and end time as
+            well as your location to filter the closest parking garage that has
+            availablity and how safe the area is.
+          </p>
+          <p>
+            Describes the availability of spaces at this location. Either
+            "available", "limited", or "unavailable". If status is "limited", we
+            will show you the number of spaces that are left at this location.
+          </p>
+          <p>
+            We will display if any and what crimes occurred nearest the parking
+            garage.
+          </p>
+          
+        </article>
+      </div>
+
+      <div id="map"></div>
     </div>
-    <div id="map"></div>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/crime_heatmap.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/config.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/logic.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/crime_heatmap.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/leaflet-heat.js') }}"
+    ></script>
   </body>
 </html>
