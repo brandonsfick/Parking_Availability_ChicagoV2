@@ -61,12 +61,12 @@ d3.json(url, function(response) {
 
         if (response[i].purchase_options[0].space_availability["status"] == "limited") {
            markers.addLayer(L.marker([location.coordinates[0], location.coordinates[1]])
-          .bindPopup(response[i]._embedded["pw:location"].address1 + "<br> Status: " + response[i].purchase_options[0].space_availability["status"] + "<br> Capacity: " + response[i].purchase_options[0].space_availability["spaces_remaining"]+ "<br>"));
+          .bindPopup(response[i]._embedded["pw:location"].address1 + "<br> Status: " + response[i].purchase_options[0].space_availability["status"] + "<br> Capacity: " + response[i].purchase_options[0].space_availability["spaces_remaining"]+ "<br>" + "<br> Price: " + response[i].purchase_options[0].price["USD"]+ " USD" + "<br>"));
         } else {
           // Add a new marker to the cluster group and bind a pop-up
           markers.addLayer(L.marker([location.coordinates[0], location.coordinates[1]])
           //.bindPopup(response[i]._embedded["pw:location"].address1));
-          .bindPopup(response[i]._embedded["pw:location"].address1 + "<br> Status: " + response[i].purchase_options[0].space_availability["status"] + "<br>"));
+          .bindPopup(response[i]._embedded["pw:location"].address1 + "<br> Status: " + response[i].purchase_options[0].space_availability["status"] + "<br>" + "<br> Price: " + response[i].purchase_options[0].price["USD"]+ " USD" + "<br>"));
         }
         
       } else {
