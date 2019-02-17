@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
 from flask import Flask, jsonify, render_template
+from flask import send_file
 
 app = Flask(__name__)
 
@@ -33,6 +34,20 @@ def index():
     """Return the homepage."""
     return render_template("Marker_Clusters.html")
 
+@app.route("/marker.png")
+def marker():
+    """Return the marker."""
+    return send_file("marker.png", mimetype='image/gif') 
+
+@app.route("/marker3.png")
+def marker2():
+    """Return the marker."""
+    return send_file("marker3.png", mimetype='image/gif') 
+
+@app.route("/marker4.png")
+def marker3():
+    """Return the marker."""
+    return send_file("marker4.png", mimetype='image/gif')         
 
 @app.route("/crime_data/")
 def crime():
