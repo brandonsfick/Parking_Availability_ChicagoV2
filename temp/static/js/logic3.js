@@ -18,17 +18,17 @@ function onMapClick(e) {
      // Marker Icon
 var redIcon = L.icon({
     iconUrl: "marker.png",
-    iconSize: [25, 50] // size of the icon
+    iconSize: [25, 40] // size of the icon
   });
   
   var yellowIcon = L.icon({
     iconUrl: "marker4.png",
-    iconSize: [25, 50] // size of the icon
+    iconSize: [25, 40] // size of the icon
   });
   
   var blackIcon = L.icon({
     iconUrl: "marker3.png",
-    iconSize: [25, 50] // size of the icon
+    iconSize: [25, 40] // size of the icon
   });
     // Grab the data with d3
     d3.json(url2, function(response) {
