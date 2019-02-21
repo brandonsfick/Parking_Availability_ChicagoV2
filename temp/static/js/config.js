@@ -1,2 +1,0 @@
-API_Whiz = "e07cb81c972d6ca3da152da3977918e2cf06412a";
-API_Map = "pk.eyJ1IjoiYnJhbmRvbnNmaWNrIiwiYSI6ImNqcnZiYWloajAwYXU0YW1kNDVoYTRjaW4ifQ.0F2qR2PG7Ci_-Czo_p7E_Q";
