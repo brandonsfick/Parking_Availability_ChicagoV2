@@ -7,8 +7,8 @@ function handleSubmit() {
     //var location = d3.select("#locationInput").node().value;
     //console.log(location);
   
-    var YOUR_APP_ID = "8KUHrKTEIU0Z76l3ideD";
-    var YOUR_APP_CODE = "6d3H8tt6xqaPffIKWp83wg";
+    var YOUR_APP_ID = "";
+    var YOUR_APP_CODE = "";
     var str = d3.select("#locationInput").node().value;
     console.log(str);
   
