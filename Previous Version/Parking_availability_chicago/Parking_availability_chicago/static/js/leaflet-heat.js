@@ -1,3 +1,8 @@
+/*
+ (c) 2014, Vladimir Agafonkin
+ simpleheat, a tiny JavaScript library for drawing heatmaps with Canvas
+ https://github.com/mourner/simpleheat
+*/
 !(function() {
 
 
@@ -33,7 +38,11 @@
     _colorize: function(t, i) {
       for (var a, s = 3, e = t.length; e > s; s += 4)a = 4 * t[s], a && (t[s - 3] = i[a], t[s - 2] = i[a + 1], t[s - 1] = i[a + 2]);
     } }, window.simpleheat = t;
-}()), 
+}()), /*
+ (c) 2014, Vladimir Agafonkin
+ Leaflet.heat, a tiny and fast heatmap plugin for Leaflet.
+ https://github.com/Leaflet/Leaflet.heat
+*/
 L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({ initialize: function(t, i) {
   this._latlngs = t, L.setOptions(this, i);
 },
